@@ -5,24 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sigortamol | Yapım Aşamasında</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Sigortamol – Yeni web sitemiz yakında. Teklif ve destek için bize ulaşın." />
+  <meta name="description" content="Sigortamol – Yeni web sitemiz çok yakında. Teklif ve destek için bize ulaşın." />
 
   <!-- Fontlar: Nexa lisanslı bir yazı tipidir. Web lisans dosyalarınızı /fonts altına koyarsanız otomatik devreye girer. -->
   <style>
     @font-face { font-family: 'Nexa'; src: url('/fonts/Nexa-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Nexa'; src: url('/fonts/Nexa-Bold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+      /* Partner logoları renkli kalsın */
+    .partners img{filter:none !important; opacity:1 !important}
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#ffffff;           /* zemin */
-      --brand:#0057a3;        /* Sigortamol mavi */
-      --accent:#f47b29;       /* turuncu */
-      --ink:#111827;          /* metin koyu */
-      --muted:#86898a;        /* ikincil metin */
-      --muted2:#b1b2b5;       /* daha açık gri */
-      --line:#e5e7eb;         /* çizgiler */
+    :root{$1
+      --heroH: 300px; /* sol görselin hedef yüksekliği (üst sabit, alt sınır) */
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -35,7 +31,7 @@
     /* HEADER */
     .header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px}
     .logo{display:flex; align-items:center; gap:10px}
-    .logo img{height:48px; width:auto}
+    .logo img{height:64px; width:auto}
 
     /* Banner */
     .ribbon{display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#fff; font-weight:900; padding:10px 16px; border-radius:12px; box-shadow:0 10px 28px rgba(244,123,41,.3); letter-spacing:.2px}
@@ -52,7 +48,12 @@
 
     .lead{margin:18px 0 22px; color:var(--muted); font-size:clamp(16px, 2.6vw, 18px)}
 
-    .hero-visual{margin:18px 0 0; border:2px solid rgba(0,87,163,.25); border-radius:16px; overflow:hidden; background:linear-gradient(135deg,#eaf2ff, #ffffff); box-shadow:0 12px 30px rgba(0,0,0,.06); position:relative; height:clamp(240px, 32vh, 340px)}
+    .hero-visual{margin:18px 0 0; border:2px solid rgba(0,87,163,.25); border-radius:16px; overflow:hidden; background:linear-gradient(135deg,#eaf2ff, #ffffff); box-shadow:0 12px 30px rgba(0,0,0,.06); position:relative; height:var(--heroH)}
+    .hero-visual::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(0,87,163,.18), rgba(244,123,41,.06) 40%, rgba(255,255,255,0) 70%)}
+    .hero-visual::before{content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,.03), rgba(0,0,0,.03) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 3px); opacity:.35}
+    @media (max-width:900px){
+      .hero-visual{height:clamp(180px, 50vw, 260px)}
+    }
     .hero-visual::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(0,87,163,.18), rgba(244,123,41,.06) 40%, rgba(255,255,255,0) 70%)}
     .hero-visual::before{content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,.03), rgba(0,0,0,.03) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 3px); opacity:.35}
     @media (max-width:900px){
@@ -70,7 +71,7 @@
     .illu .thin{stroke-width:2}
     .illu .mid{stroke-width:4}
     .illu .thick{stroke-width:6}
-    .hero-visual img{width:100%; height:100%; object-fit:cover; display:block; filter:url(#pastel-filter) saturate(0.95) contrast(1.03) brightness(1.04)}
+    .hero-visual img{width:100%; height:100%; object-fit:cover; object-position:50% 0%; display:block; filter:url(#pastel-filter) saturate(0.95) contrast(1.03) brightness(1.04)}
 
     /* Neler Hazırlıyoruz */
     .side{display:flex; flex-direction:column; gap:14px}
@@ -110,11 +111,13 @@
     .btn.mail{background:var(--accent)}
 
     /* Partners */
-    .partners{display:flex; flex-wrap:nowrap; gap:24px; align-items:center; padding:18px 0 0; overflow-x:auto; scrollbar-width:thin}
-    .partners .logo-item{height:32px; width:auto; filter:grayscale(1); opacity:.9; flex:0 0 auto}
+    .partners{display:flex; flex-wrap:nowrap; align-items:center; justify-content:center; gap:20px; padding:18px 0 0; overflow-x:auto; scrollbar-width:thin}
+    .partners .logo-item{height:32px; width:auto; display:inline-block; flex:0 0 auto; filter:none; opacity:1}
+    /* İnce ayırıcı çizgi + ferah aralık */
+    .partners .logo-item + .logo-item{border-left:1px solid var(--line); padding-left:18px; margin-left:12px}
     .brands{background:#fff; border:1px solid var(--line); border-radius:18px; padding:16px 20px; box-shadow:0 10px 28px rgba(0,0,0,.05); margin-top:18px}
     .brands-title{margin:0 0 12px; font-size:18px; font-weight:900; color:var(--brand)}
-    .partners .logo-item{height:32px; width:auto; filter:grayscale(1); opacity:.9}
+    .partners .logo-item{height:32px; width:auto; filter:none; opacity:1}
 
     /* FOOTER */
     .divider{height:1px; background:var(--line); margin:24px 0}
@@ -138,9 +141,18 @@
 
     <section class="hero" aria-label="Yapım Aşamasında">
       <div>
-        <h1 class="title">Yeni <span class="brand">sigortam<span class="ol">ol</span></span><br/>web sitemiz yakında <span class="yay">yayında!</span></h1>
+        <h1 class="title">Yeni <span class="brand">sigortam<span class="ol">ol</span></span><br/>web sitemiz çok yakında <span class="yay">yayında</span></h1>
         <figure class="hero-visual">
-          <img class="img" src="images/sigortamol_banner.jpg" alt="Sigorta danışmanlığı | araç, konut ve sağlık güvencesi" />
+          <picture>
+            <!-- WEBP varsa öncelikli -->
+            <source type="image/webp" srcset="images/sigortamol_banner.webp">
+            <!-- Olası isim varyasyonları (küçük/büyük harf, pastel) -->
+            <source srcset="images/sigortamol_banner.jpg">
+            <source srcset="images/SIGORTAMOL_BANNER.jpg">
+            <source srcset="images/sigortamol_banner_pastel.jpg">
+            <!-- Varsayılan fallback -->
+            <img class="img" src="images/sigortamol_banner.jpg" alt="Sigorta danışmanlığı | araç, konut ve sağlık güvencesi" />
+          </picture>
         </figure>
         </div>
 
@@ -182,10 +194,10 @@
     <section class="brands" aria-label="Sigorta Şirketleri">
       <h3 class="brands-title">Anlaşmalı Sigorta Şirketlerimiz</h3>
       <div class="partners">
-        <img class="logo-item" src="logos/turkiye-sigorta.jpg" alt="Türkiye Sigorta" />
+        <img class="logo-item" src="logos/turkiye-sigorta.png" alt="Türkiye Sigorta" />
         <img class="logo-item" src="logos/ray-sigorta.png" alt="Ray Sigorta" />
         <img class="logo-item" src="logos/quick-sigorta.png" alt="Quick Sigorta" />
-        <img class="logo-item" src="logos/hepiyi-sigorta.png" alt="Hepiyi Sigorta" />
+        <img class="logo-item" src="logos/hepyi-sigorta.png" alt="Hepiyi Sigorta" />
         <img class="logo-item" src="logos/ankara-sigorta.png" alt="Ankara Sigorta" />
       </div>
     </section>
@@ -195,12 +207,11 @@
     <footer class="footer">
       <div>
         TALAYTEPE MAH. 4005/3. SK. B BLOK NO: 8Bİ KAYAPINAR / DİYARBAKIR
-		
       </div>
       <div>© <span id="y"></span> Sigortamol. Tüm hakları saklıdır.</div>
     </footer>
 
-   <!-- <p class="note">Not: Nexa web font dosyalarınızı <code>/fonts/Nexa-Regular.woff2</code> ve <code>/fonts/Nexa-Bold.woff2</code> olarak eklerseniz başlıklar ve metin Nexa ile görüntülenir.</p>
+    <p class="note">Not: Nexa web font dosyalarınızı <code>/fonts/Nexa-Regular.woff2</code> ve <code>/fonts/Nexa-Bold.woff2</code> olarak eklerseniz başlıklar ve metin Nexa ile görüntülenir.</p>
   </div>
 
   <script>
