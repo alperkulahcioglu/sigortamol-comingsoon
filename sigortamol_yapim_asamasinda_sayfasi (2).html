@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sigortamol | Yapım Aşamasında</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Sigortamol – Yeni web sitemiz yakında yayında. 7/24 teklif ve destek için bize ulaşın." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; /* BEYAZ ZEMIN */
+      --ink:#0f172a; /* koyu lacivert metin */
+      --muted:#475569; /* gri metin */
+      --line:#e5e7eb; /* sınırlar */
+      --brand:#0b5cab; /* Sigortamol mavi yaklaştırma */
+      --accent:#f97316; /* turuncu */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      color:var(--ink); background:var(--bg); display:grid; place-items:center; padding:24px;
+    }
+    .wrap{width:min(1100px, 100%)}
+    .header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px}
+    .header img{height:56px; width:auto}
+
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; background:#fff; border:1px solid var(--line); border-radius:24px; padding:32px; box-shadow:0 12px 40px rgba(15,23,42,.06)}
+    @media (max-width:860px){.hero{grid-template-columns:1fr}}
+
+    .title{font-size:clamp(34px, 5vw, 54px); line-height:1.05; font-weight:900; margin:0 0 12px}
+    .title .accent{color:var(--accent)}
+    .lead{margin:0 0 18px; color:var(--muted); font-size:clamp(16px, 2.4vw, 18px)}
+
+    .status{display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:999px; background:rgba(11,92,171,.08); border:1px solid rgba(2,132,199,.25); color:var(--brand); font-weight:900; letter-spacing:.2px}
+    .status svg{width:18px; height:18px}
+
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px}
+    .btn{appearance:none; border:none; cursor:pointer; text-decoration:none; color:#fff; font-weight:900; padding:14px 18px; border-radius:14px; display:inline-flex; align-items:center; gap:10px; box-shadow:0 8px 22px rgba(15,23,42,.08); transition:transform .12s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 12px 26px rgba(15,23,42,.12)}
+    .btn svg{width:20px; height:20px}
+    .btn.whatsapp{background:#22c55e}
+    .btn.tel{background:#0ea5e9}
+    .btn.mail{background:#f59e0b}
+
+    .panel{margin-top:26px; background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px}
+    .panel .title2{font-size:20px; font-weight:900; margin:0 0 10px}
+    .list{margin:0; padding:0; list-style:none}
+    .list li{display:flex; align-items:flex-start; gap:10px; padding:12px 0; border-top:1px dashed #eef2f7}
+    .list li:first-child{border-top:none}
+    .dot{width:10px; height:10px; border-radius:50%; background:var(--brand); margin-top:6px}
+
+    .footer{margin-top:22px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    /* Büyük, net illüstrasyon */
+    .illus{width:100%; height:auto}
+    .illus .blob1{fill:#eaf2ff}
+    .illus .blob2{fill:#fff3e8}
+    .illus .gear{fill:#0b5cab}
+    .illus .cone{fill:#f97316}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <!-- LOGO: Dosya adını sunucundaki adla eşleştir -->
+      <img src="LOGO-ALPER-TURUNCU.png" alt="Sigortamol" />
+      <span class="status" aria-live="polite">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 3a1 1 0 0 1 2 0v2h-2V3Zm7.071 2.929 1.414 1.414-1.414 1.414-1.414-1.414 1.414-1.414ZM3 11H1a1 1 0 1 0 0 2h2v-2Zm20 0h-2v2h2a1 1 0 1 0 0-2ZM5.515 6.343 4.1 7.757l1.414 1.414L6.93 7.757 5.515 6.343ZM11 19v2a1 1 0 1 0 2 0v-2h-2Z"/></svg>
+        Yapım Aşamasında
+      </span>
+    </header>
+
+    <section class="hero" aria-label="Yapım Aşamasında Bilgisi">
+      <div>
+        <h1 class="title">Yeni <span class="accent">Sigortamol</span> web sitemiz <br/>çok yakında yayında.</h1>
+        <p class="lead">Bu süreçte teklif ve destek talepleriniz için bize her zaman ulaşabilirsiniz.</p>
+        <div class="cta" role="group" aria-label="İletişim kısayolları">
+          <a class="btn whatsapp" href="https://wa.me/905449199900?text=Merhaba%20Sigortamol%20Sigorta%20Dan%C4%B1%C5%9Fman%C4%B1m." target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
+            <!-- WhatsApp SVG -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 20.4L2 22l1.8-.5a11 11 0 0 0 16.7-14Z" opacity=".2"/><path d="M12.1 2A10.1 10.1 0 0 0 3.5 17.6L3 20l2.4-.6A10.1 10.1 0 1 0 12.1 2Zm5.9 16a8.4 8.4 0 0 1-11 .9l-.3-.2-1.4.4.4-1.4-.2-.3a8.4 8.4 0 1 1 12.5.6ZM9.9 7.7c-.2-.5-.4-.4-.6-.4l-.5.1c-.2 0-.5.2-.7.5-.2.2-.9.9-.9 2.1 0 1.2.9 2.3 1 2.5.1.2 1.8 2.8 4.4 3.8 2.2.9 2.7.8 3.2.7.5 0 1.6-.6 1.8-1.2.2-.6.2-1.1.2-1.2 0-.1-.1-.2-.3-.3l-1-.5c-.2-.1-.3-.1-.5.1-.2.2-.6.7-.7.9-.1.2-.3.2-.5.1-.2-.1-1.1-.4-2-1.3-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.3-.4.1-.1.1-.2.2-.4 0-.2 0-.3 0-.4 0-.1 0-.3-.1-.4l-.4-.9Z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn tel" href="tel:+904125030505" aria-label="Telefonla ara">
+            <!-- Phone SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.8 15.8 0 0 0 6.6 6.6l2.2-2.2a1.4 1.4 0 0 1 1.4-.34 12.3 12.3 0 0 0 3.9.62 1.4 1.4 0 0 1 1.4 1.4v3.8a1.4 1.4 0 0 1-1.4 1.4A19.4 19.4 0 0 1 2 4.4 1.4 1.4 0 0 1 3.4 3h3.8a1.4 1.4 0 0 1 1.4 1.4 12.3 12.3 0 0 0 .62 3.9 1.4 1.4 0 0 1-.34 1.4l-2.2 2.2Z"/></svg>
+            Ara
+          </a>
+          <a class="btn mail" href="mailto:bilgi@sigortamol.com?subject=Teklif%20Talebi&body=Merhaba%2C%20ileti%C5%9Fim%20i%C3%A7in%20ad%C4%B1m%2Ftelefonum%3A" aria-label="E-posta gönder">
+            <!-- Mail SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 6.75A2.75 2.75 0 0 1 4.75 4h14.5A2.75 2.75 0 0 1 22 6.75v10.5A2.75 2.75 0 0 1 19.25 20H4.75A2.75 2.75 0 0 1 2 17.25V6.75Zm2.89-.25 7.02 5.26a1 1 0 0 0 1.18 0l7.02-5.26H4.89Z"/></svg>
+            E‑posta
+          </a>
+        </div>
+      </div>
+      <!-- Büyük illüstrasyon (SVG) -->
+      <svg class="illus" viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yapım çalışması illüstrasyonu">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#eaf2ff"/>
+            <stop offset="100%" stop-color="#fff"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="540" height="420" fill="url(#g1)"/>
+        <circle cx="420" cy="120" r="70" class="blob1"/>
+        <circle cx="120" cy="300" r="90" class="blob2"/>
+        <!-- Dişli -->
+        <g transform="translate(270 190) scale(1.1)">
+          <circle r="72" fill="#d9e8ff"/>
+          <path class="gear" d="M0-88l14 5 9-11 14 8 7-12 15 6 5-13 15 2 3-14 16 2 0 14 15 2-2 14 14 5-6 13 12 9-9 11 10 11-12 10 6 13-14 5 2 14-15 2 0 14-16-2-3 14-15-2-5 13-15-6-7 12-14-8-9 11-14-5-10 11-12-9-12 10-10-11-14 5-6-13-15-2 2-14-14-5 6-13-12-9 9-11-10-11 12-10-6-13 14-5-2-14 15-2 0-14 16 2 3-14 15 2 5-13 15 6 7-12 14 8 9-11 14 5 10-11 12 9z" fill="#0b5cab" opacity=".15"/>
+        </g>
+        <!-- Yol konisi -->
+        <g transform="translate(420 290) scale(1.2)">
+          <path class="cone" d="M20 80h60l-18-56a8 8 0 0 0-7.6-5.6H45.6A8 8 0 0 0 38 24L20 80Z"/>
+          <rect x="20" y="80" width="60" height="12" rx="3" fill="#ffc89f"/>
+          <rect x="50" y="48" width="14" height="10" rx="2" fill="#fff"/>
+          <rect x="44" y="62" width="26" height="8" rx="2" fill="#fff"/>
+        </g>
+      </svg>
+    </section>
+
+    <section class="panel" aria-label="Neler Hazırlıyoruz?">
+      <h2 class="title2">Neler Hazırlıyoruz?</h2>
+      <ul class="list">
+        <li><span class="dot" aria-hidden="true"></span> Tüm branşlarda <strong>online teklif</strong> ve başvuru</li>
+        <li><span class="dot" aria-hidden="true"></span> Poliçe ve hasar süreçlerinde <strong>7/24 destek</strong></li>
+        <li><span class="dot" aria-hidden="true"></span> Mevcut müşterilerimiz için <strong>yenileme hatırlatmaları</strong></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Sigortamol. Tüm hakları saklıdır.</div>
+      <div>
+        <a href="#" style="color:var(--brand); text-decoration:none; font-weight:800">Instagram</a>
+        <span style="color:#cbd5e1">·</span>
+        <a href="#" style="color:var(--brand); text-decoration:none; font-weight:800">LinkedIn</a>
+        <span style="color:#cbd5e1">·</span>
+        <a href="#" style="color:var(--brand); text-decoration:none; font-weight:800">X</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
