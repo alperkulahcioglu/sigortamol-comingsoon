@@ -5,145 +5,218 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sigortamol | Yapım Aşamasında</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Sigortamol – Yeni web sitemiz yakında yayında. 7/24 teklif ve destek için bize ulaşın." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Sigortamol – Yeni web sitemiz yakında. Teklif ve destek için bize ulaşın." />
+
+  <!-- Fontlar: Nexa lisanslı bir yazı tipidir. Web lisans dosyalarınızı /fonts altına koyarsanız otomatik devreye girer. -->
+  <style>
+    @font-face { font-family: 'Nexa'; src: url('/fonts/Nexa-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Nexa'; src: url('/fonts/Nexa-Bold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#ffffff; /* BEYAZ ZEMIN */
-      --ink:#0f172a; /* koyu lacivert metin */
-      --muted:#475569; /* gri metin */
-      --line:#e5e7eb; /* sınırlar */
-      --brand:#0b5cab; /* Sigortamol mavi yaklaştırma */
-      --accent:#f97316; /* turuncu */
+      --bg:#ffffff;           /* zemin */
+      --brand:#0057a3;        /* Sigortamol mavi */
+      --accent:#f47b29;       /* turuncu */
+      --ink:#111827;          /* metin koyu */
+      --muted:#86898a;        /* ikincil metin */
+      --muted2:#b1b2b5;       /* daha açık gri */
+      --line:#e5e7eb;         /* çizgiler */
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
-      color:var(--ink); background:var(--bg); display:grid; place-items:center; padding:24px;
+      margin:0; font-family:'Nexa', 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color:var(--ink); background:var(--bg); display:grid; place-items:start; padding:24px;
     }
-    .wrap{width:min(1100px, 100%)}
-    .header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px}
-    .header img{height:56px; width:auto}
+    .wrap{width:min(1120px, 100%); margin-inline:auto}
 
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; background:#fff; border:1px solid var(--line); border-radius:24px; padding:32px; box-shadow:0 12px 40px rgba(15,23,42,.06)}
-    @media (max-width:860px){.hero{grid-template-columns:1fr}}
+    /* HEADER */
+    .header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px}
+    .logo{display:flex; align-items:center; gap:10px}
+    .logo img{height:48px; width:auto}
 
-    .title{font-size:clamp(34px, 5vw, 54px); line-height:1.05; font-weight:900; margin:0 0 12px}
-    .title .accent{color:var(--accent)}
-    .lead{margin:0 0 18px; color:var(--muted); font-size:clamp(16px, 2.4vw, 18px)}
+    /* Banner */
+    .ribbon{display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#fff; font-weight:900; padding:10px 16px; border-radius:12px; box-shadow:0 10px 28px rgba(244,123,41,.3); letter-spacing:.2px}
+    .ribbon svg{width:18px; height:18px}
 
-    .status{display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:999px; background:rgba(11,92,171,.08); border:1px solid rgba(2,132,199,.25); color:var(--brand); font-weight:900; letter-spacing:.2px}
-    .status svg{width:18px; height:18px}
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:start; background:#fff; border:1px solid var(--line); border-radius:20px; padding:28px; box-shadow:0 14px 40px rgba(0,0,0,.05)}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
 
-    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px}
-    .btn{appearance:none; border:none; cursor:pointer; text-decoration:none; color:#fff; font-weight:900; padding:14px 18px; border-radius:14px; display:inline-flex; align-items:center; gap:10px; box-shadow:0 8px 22px rgba(15,23,42,.08); transition:transform .12s ease, box-shadow .2s ease}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 12px 26px rgba(15,23,42,.12)}
+    .title{font-size:clamp(36px, 6vw, 58px); line-height:1.06; font-weight:900; margin:0}
+    .title .brand{color:var(--brand)}
+    .title .brand .ol{color:var(--accent)}
+    .title .yay{color:var(--ink)}
+
+    .lead{margin:18px 0 22px; color:var(--muted); font-size:clamp(16px, 2.6vw, 18px)}
+
+    .hero-visual{margin:18px 0 0; border:2px solid rgba(0,87,163,.25); border-radius:16px; overflow:hidden; background:linear-gradient(135deg,#eaf2ff, #ffffff); box-shadow:0 12px 30px rgba(0,0,0,.06); position:relative; height:clamp(240px, 32vh, 340px)}
+    .hero-visual::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(0,87,163,.18), rgba(244,123,41,.06) 40%, rgba(255,255,255,0) 70%)}
+    .hero-visual::before{content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,.03), rgba(0,0,0,.03) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 3px); opacity:.35}
+    @media (max-width:900px){
+      .hero-visual{height:clamp(180px, 50vw, 260px)}
+    }
+    .hero-visual::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(0,87,163,.18), rgba(244,123,41,.06) 40%, rgba(255,255,255,0) 70%)}
+    .hero-visual::before{content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,.03), rgba(0,0,0,.03) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 3px); opacity:.35}
+    .hero-visual svg{width:100%; height:100%; display:block}
+    .illu .s-brand{stroke:var(--brand)}
+    .illu .s-accent{stroke:var(--accent)}
+    .illu .s-muted{stroke:#b1b2b5}
+    .illu .f-accent{fill:var(--accent)}
+    .illu .f-soft{fill:#f6faff}
+    .illu .cap{stroke-linecap:round; stroke-linejoin:round}
+    .illu .thin{stroke-width:2}
+    .illu .mid{stroke-width:4}
+    .illu .thick{stroke-width:6}
+    .hero-visual img{width:100%; height:100%; object-fit:cover; display:block; filter:url(#pastel-filter) saturate(0.95) contrast(1.03) brightness(1.04)}
+
+    /* Neler Hazırlıyoruz */
+    .side{display:flex; flex-direction:column; gap:14px}
+    .side-title{$1}
+    .reach{font-weight:900; margin:12px 0 10px;}
+    .reach{font-weight:900; margin:14px 0 10px}
+    .contact-list{display:flex; flex-direction:column; gap:10px}
+    .contact-item{display:flex; align-items:center; gap:12px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px 12px; box-shadow:0 6px 16px rgba(0,0,0,.04)}
+    .contact-ico{width:42px; height:42px; border-radius:999px; display:grid; place-items:center}
+    .contact-ico svg{width:22px; height:22px; fill:#fff}
+    .ico-wa{background:#25D366}
+    .ico-tel{background:var(--brand)}
+    .ico-mail{background:var(--accent)}
+    .contact-label{font-weight:900; min-width:86px; color:#111}
+    .contact-item{display:flex; align-items:center; gap:12px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px 12px; box-shadow:0 6px 16px rgba(0,0,0,.04); text-decoration:none; color:inherit}
+    .contact-item:hover{border-color:rgba(0,87,163,.35); box-shadow:0 8px 18px rgba(0,0,0,.06)}
+    .contact-link a{color:var(--brand); text-decoration:none; font-weight:800}
+    .contact-link a:hover{text-decoration:underline}
+    #contact-main ~ a{display:none !important}
+    .bullet{display:flex; align-items:flex-start; gap:10px; color:#111}
+    .bullet:before{content:""; width:10px; height:10px; margin-top:6px; border-radius:50%; background:var(--brand)}
+
+    /* CTA */
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px}
+    .btn{appearance:none; border:none; cursor:pointer; text-decoration:none; color:#fff; font-weight:900; padding:0; border-radius:16px; display:inline-flex; align-items:center; gap:12px; box-shadow:0 10px 24px rgba(0,0,0,.08); transition:transform .12s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(0,0,0,.12)}
+    .btn .ico{width:36px; height:36px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.18)}
+    .btn .ico svg{width:20px; height:20px}
+    .btn .lbl{padding:14px 18px 14px 0; font-weight:900}
+    .btn.wa{background:linear-gradient(180deg,#2fe06d,#21b75b); border:1px solid rgba(33,183,91,.35); padding-left:12px}
+    .btn.tel{background:linear-gradient(180deg,#0a69bd,#0057a3); border:1px solid rgba(0,87,163,.35); padding-left:12px}
+    .btn.mail{background:linear-gradient(180deg,#ffa85e,#f47b29); border:1px solid rgba(244,123,41,.35); padding-left:12px}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(0,0,0,.12)}
     .btn svg{width:20px; height:20px}
-    .btn.whatsapp{background:#22c55e}
-    .btn.tel{background:#0ea5e9}
-    .btn.mail{background:#f59e0b}
+    .btn.wa{background:#25D366}
+    .btn.tel{background:var(--brand)}
+    .btn.mail{background:var(--accent)}
 
-    .panel{margin-top:26px; background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px}
-    .panel .title2{font-size:20px; font-weight:900; margin:0 0 10px}
-    .list{margin:0; padding:0; list-style:none}
-    .list li{display:flex; align-items:flex-start; gap:10px; padding:12px 0; border-top:1px dashed #eef2f7}
-    .list li:first-child{border-top:none}
-    .dot{width:10px; height:10px; border-radius:50%; background:var(--brand); margin-top:6px}
+    /* Partners */
+    .partners{display:flex; flex-wrap:nowrap; gap:24px; align-items:center; padding:18px 0 0; overflow-x:auto; scrollbar-width:thin}
+    .partners .logo-item{height:32px; width:auto; filter:grayscale(1); opacity:.9; flex:0 0 auto}
+    .brands{background:#fff; border:1px solid var(--line); border-radius:18px; padding:16px 20px; box-shadow:0 10px 28px rgba(0,0,0,.05); margin-top:18px}
+    .brands-title{margin:0 0 12px; font-size:18px; font-weight:900; color:var(--brand)}
+    .partners .logo-item{height:32px; width:auto; filter:grayscale(1); opacity:.9}
 
-    .footer{margin-top:22px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    /* FOOTER */
+    .divider{height:1px; background:var(--line); margin:24px 0}
+    .footer{display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; color:var(--muted); font-size:14px}
 
-    /* Büyük, net illüstrasyon */
-    .illus{width:100%; height:auto}
-    .illus .blob1{fill:#eaf2ff}
-    .illus .blob2{fill:#fff3e8}
-    .illus .gear{fill:#0b5cab}
-    .illus .cone{fill:#f97316}
+    /* Utility */
+    .note{font-size:14px; color:var(--muted); margin-top:6px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="header">
-      <!-- LOGO: Dosya adını sunucundaki adla eşleştir -->
-      <img src="LOGO-ALPER-TURUNCU.png" alt="Sigortamol" />
-      <span class="status" aria-live="polite">
+      <div class="logo">
+        <img src="sigortamol.png" alt="Sigortamol logosu" />
+      </div>
+      <span class="ribbon" aria-live="polite">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 3a1 1 0 0 1 2 0v2h-2V3Zm7.071 2.929 1.414 1.414-1.414 1.414-1.414-1.414 1.414-1.414ZM3 11H1a1 1 0 1 0 0 2h2v-2Zm20 0h-2v2h2a1 1 0 1 0 0-2ZM5.515 6.343 4.1 7.757l1.414 1.414L6.93 7.757 5.515 6.343ZM11 19v2a1 1 0 1 0 2 0v-2h-2Z"/></svg>
-        Yapım Aşamasında
+        YAPIM AŞAMASINDA
       </span>
     </header>
 
-    <section class="hero" aria-label="Yapım Aşamasında Bilgisi">
+    <section class="hero" aria-label="Yapım Aşamasında">
       <div>
-        <h1 class="title">Yeni <span class="accent">Sigortamol</span> web sitemiz <br/>çok yakında yayında.</h1>
-        <p class="lead">Bu süreçte teklif ve destek talepleriniz için bize her zaman ulaşabilirsiniz.</p>
-        <div class="cta" role="group" aria-label="İletişim kısayolları">
-          <a class="btn whatsapp" href="https://wa.me/905449199900?text=Merhaba%20Sigortamol%20Sigorta%20Dan%C4%B1%C5%9Fman%C4%B1m." target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
-            <!-- WhatsApp SVG -->
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 20.4L2 22l1.8-.5a11 11 0 0 0 16.7-14Z" opacity=".2"/><path d="M12.1 2A10.1 10.1 0 0 0 3.5 17.6L3 20l2.4-.6A10.1 10.1 0 1 0 12.1 2Zm5.9 16a8.4 8.4 0 0 1-11 .9l-.3-.2-1.4.4.4-1.4-.2-.3a8.4 8.4 0 1 1 12.5.6ZM9.9 7.7c-.2-.5-.4-.4-.6-.4l-.5.1c-.2 0-.5.2-.7.5-.2.2-.9.9-.9 2.1 0 1.2.9 2.3 1 2.5.1.2 1.8 2.8 4.4 3.8 2.2.9 2.7.8 3.2.7.5 0 1.6-.6 1.8-1.2.2-.6.2-1.1.2-1.2 0-.1-.1-.2-.3-.3l-1-.5c-.2-.1-.3-.1-.5.1-.2.2-.6.7-.7.9-.1.2-.3.2-.5.1-.2-.1-1.1-.4-2-1.3-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.3-.4.1-.1.1-.2.2-.4 0-.2 0-.3 0-.4 0-.1 0-.3-.1-.4l-.4-.9Z"/></svg>
-            WhatsApp
+        <h1 class="title">Yeni <span class="brand">sigortam<span class="ol">ol</span></span><br/>web sitemiz yakında <span class="yay">yayında!</span></h1>
+        <figure class="hero-visual">
+          <img class="img" src="images/SIGORTAMOL_BANNER.jpg" alt="Sigorta danışmanlığı | araç, konut ve sağlık güvencesi" />
+        </figure>
+        </div>
+
+      <aside class="side">
+        <h3 class="side-title">Neler Hazırlıyoruz?</h3>
+        <div class="bullet"><div> Tüm branşlarda <strong>online teklif</strong> ve başvuru</div></div>
+        <div class="bullet"><div> Poliçe ve hasar süreçlerinde <strong>7/24 destek</strong></div></div>
+        <div class="bullet"><div> Mevcut müşterilerimiz için <strong>yenileme hatırlatmaları</strong></div></div>
+
+        <p class="reach"><strong>Bu süreçte teklif ve destek talepleriniz için bize her zaman ulaşabilirsiniz.</strong></p>
+        <div class="contact-list" id="contact-main">
+          <a class="contact-item" href="https://wa.me/905449199900?text=Merhaba%20Sigortamol%20Sigorta%20Dan%C4%B1%C5%9Fman%C4%B1m." target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
+            <div class="contact-ico ico-wa" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.1 2A10.1 10.1 0 0 0 3.5 17.6L3 20l2.4-.6A10.1 10.1 0 1 0 12.1 2Z" opacity=".2" fill="#fff"/><path d="M12.1 2A10.1 10.1 0 0 0 3.5 17.6L3 20l2.4-.6A10.1 10.1 0 1 0 12.1 2Zm5.9 16a8.4 8.4 0 0 1-11 .9l-.3-.2-1.4.4.4-1.4-.2-.3a8.4 8.4 0 1 1 12.5.6ZM9.9 7.7c-.2-.5-.4-.4-.6-.4l-.5.1c-.2 0-.5.2-.7.5-.2.2-.9.9-.9 2.1 0 1.2.9 2.3 1 2.5.1.2 1.8 2.8 4.4 3.8 2.2.9 2.7.8 3.2.7.5 0 1.6-.6 1.8-1.2.2-.6.2-1.1.2-1.2 0-.1-.1-.2-.3-.3l-1-.5c-.2-.1-.3-.1-.5.1-.2.2-.6.7-.7.9-.1.2-.3.2-.5.1-.2-.1-1.1-.4-2-1.3-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.3-.4.1-.1.1-.2.2-.4 0-.2 0-.3 0-.4 0-.1 0-.3-.1-.4l-.4-.9Z" fill="#fff"/></svg>
+            </div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-link"><span class="contact-value">+90 544 919 99 00</span></div>
           </a>
-          <a class="btn tel" href="tel:+904125030505" aria-label="Telefonla ara">
-            <!-- Phone SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.8 15.8 0 0 0 6.6 6.6l2.2-2.2a1.4 1.4 0 0 1 1.4-.34 12.3 12.3 0 0 0 3.9.62 1.4 1.4 0 0 1 1.4 1.4v3.8a1.4 1.4 0 0 1-1.4 1.4A19.4 19.4 0 0 1 2 4.4 1.4 1.4 0 0 1 3.4 3h3.8a1.4 1.4 0 0 1 1.4 1.4 12.3 12.3 0 0 0 .62 3.9 1.4 1.4 0 0 1-.34 1.4l-2.2 2.2Z"/></svg>
-            Ara
+
+          <a class="contact-item" href="tel:+904125030505" aria-label="Telefonla ara">
+            <div class="contact-ico ico-tel" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8a15.8 15.8 0 0 0 6.6 6.6l2.2-2.2a1.4 1.4 0 0 1 1.4-.34 12.3 12.3 0 0 0 3.9.62 1.4 1.4 0 0 1 1.4 1.4v3.8a1.4 1.4 0 0 1-1.4 1.4A19.4 19.4 0 0 1 2 4.4 1.4 1.4 0 0 1 3.4 3h3.8a1.4 1.4 0 0 1 1.4 1.4 12.3 12.3 0 0 0 .62 3.9 1.4 1.4 0 0 1-.34 1.4l-2.2 2.2Z"/></svg>
+            </div>
+            <div class="contact-label">Ara</div>
+            <div class="contact-link"><span class="contact-value">+90 412 503 05 05</span></div>
           </a>
-          <a class="btn mail" href="mailto:bilgi@sigortamol.com?subject=Teklif%20Talebi&body=Merhaba%2C%20ileti%C5%9Fim%20i%C3%A7in%20ad%C4%B1m%2Ftelefonum%3A" aria-label="E-posta gönder">
-            <!-- Mail SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 6.75A2.75 2.75 0 0 1 4.75 4h14.5A2.75 2.75 0 0 1 22 6.75v10.5A2.75 2.75 0 0 1 19.25 20H4.75A2.75 2.75 0 0 1 2 17.25V6.75Zm2.89-.25 7.02 5.26a1 1 0 0 0 1.18 0l7.02-5.26H4.89Z"/></svg>
-            E‑posta
+
+          <a class="contact-item" href="mailto:bilgi@sigortamol.com?subject=Teklif%20Talebi" aria-label="E-posta gönder">
+            <div class="contact-ico ico-mail" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm1.89-.25 7.02 5.26a1 1 0 0 0 1.18 0L20.1 6.5H4.89Z"/></svg>
+            </div>
+            <div class="contact-label">E‑posta</div>
+            <div class="contact-link"><span class="contact-value">bilgi@sigortamol.com</span></div>
           </a>
         </div>
-      </div>
-      <!-- Büyük illüstrasyon (SVG) -->
-      <svg class="illus" viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yapım çalışması illüstrasyonu">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#eaf2ff"/>
-            <stop offset="100%" stop-color="#fff"/>
-          </linearGradient>
-        </defs>
-        <rect x="0" y="0" width="540" height="420" fill="url(#g1)"/>
-        <circle cx="420" cy="120" r="70" class="blob1"/>
-        <circle cx="120" cy="300" r="90" class="blob2"/>
-        <!-- Dişli -->
-        <g transform="translate(270 190) scale(1.1)">
-          <circle r="72" fill="#d9e8ff"/>
-          <path class="gear" d="M0-88l14 5 9-11 14 8 7-12 15 6 5-13 15 2 3-14 16 2 0 14 15 2-2 14 14 5-6 13 12 9-9 11 10 11-12 10 6 13-14 5 2 14-15 2 0 14-16-2-3 14-15-2-5 13-15-6-7 12-14-8-9 11-14-5-10 11-12-9-12 10-10-11-14 5-6-13-15-2 2-14-14-5 6-13-12-9 9-11-10-11 12-10-6-13 14-5-2-14 15-2 0-14 16 2 3-14 15 2 5-13 15 6 7-12 14 8 9-11 14 5 10-11 12 9z" fill="#0b5cab" opacity=".15"/>
-        </g>
-        <!-- Yol konisi -->
-        <g transform="translate(420 290) scale(1.2)">
-          <path class="cone" d="M20 80h60l-18-56a8 8 0 0 0-7.6-5.6H45.6A8 8 0 0 0 38 24L20 80Z"/>
-          <rect x="20" y="80" width="60" height="12" rx="3" fill="#ffc89f"/>
-          <rect x="50" y="48" width="14" height="10" rx="2" fill="#fff"/>
-          <rect x="44" y="62" width="26" height="8" rx="2" fill="#fff"/>
-        </g>
-      </svg>
+      </aside>
     </section>
 
-    <section class="panel" aria-label="Neler Hazırlıyoruz?">
-      <h2 class="title2">Neler Hazırlıyoruz?</h2>
-      <ul class="list">
-        <li><span class="dot" aria-hidden="true"></span> Tüm branşlarda <strong>online teklif</strong> ve başvuru</li>
-        <li><span class="dot" aria-hidden="true"></span> Poliçe ve hasar süreçlerinde <strong>7/24 destek</strong></li>
-        <li><span class="dot" aria-hidden="true"></span> Mevcut müşterilerimiz için <strong>yenileme hatırlatmaları</strong></li>
-      </ul>
+    <section class="brands" aria-label="Sigorta Şirketleri">
+      <h3 class="brands-title">Anlaşmalı Sigorta Şirketlerimiz</h3>
+      <div class="partners">
+        <img class="logo-item" src="logos/turkiye-sigorta.png" alt="Türkiye Sigorta" />
+        <img class="logo-item" src="logos/ray-sigorta.png" alt="Ray Sigorta" />
+        <img class="logo-item" src="logos/quick-sigorta.png" alt="Quick Sigorta" />
+        <img class="logo-item" src="logos/hepyi-sigorta.png" alt="Hepiyi Sigorta" />
+        <img class="logo-item" src="logos/ankara-sigorta.png" alt="Ankara Sigorta" />
+      </div>
     </section>
+
+    <div class="divider"></div>
 
     <footer class="footer">
-      <div>© <span id="y"></span> Sigortamol. Tüm hakları saklıdır.</div>
       <div>
-        <a href="#" style="color:var(--brand); text-decoration:none; font-weight:800">Instagram</a>
-        <span style="color:#cbd5e1">·</span>
-        <a href="#" style="color:var(--brand); text-decoration:none; font-weight:800">LinkedIn</a>
-        <span style="color:#cbd5e1">·</span>
-        <a href="#" style="color:var(--brand); text-decoration:none; font-weight:800">X</a>
+        TALAYTEPE MAH. 4005/3. SK. B BLOK NO: 8Bİ KAYAPINAR / DİYARBAKIR
       </div>
+      <div>© <span id="y"></span> Sigortamol. Tüm hakları saklıdır.</div>
     </footer>
+
+    <p class="note">Not: Nexa web font dosyalarınızı <code>/fonts/Nexa-Regular.woff2</code> ve <code>/fonts/Nexa-Bold.woff2</code> olarak eklerseniz başlıklar ve metin Nexa ile görüntülenir.</p>
   </div>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+  <!-- Pastel boya etkisi için SVG filtre tanımı -->
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="pastel-filter">
+      <feGaussianBlur stdDeviation="0.8" result="blur"/>
+      <feColorMatrix type="saturate" values="0.88" in="blur" result="sat"/>
+      <feComponentTransfer in="sat" result="soft">
+        <feFuncR type="gamma" amplitude="1" exponent="0.72"/>
+        <feFuncG type="gamma" amplitude="1" exponent="0.72"/>
+        <feFuncB type="gamma" amplitude="1" exponent="0.72"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="soft" mode="lighten"/>
+    </filter>
+  </svg>
 </body>
 </html>
